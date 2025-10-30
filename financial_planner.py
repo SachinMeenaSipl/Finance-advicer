@@ -59,9 +59,12 @@ class FinancialPlanner:
             fv_current = goal.current_savings * math.pow(1 + monthly_rate, months_available)
             
             # Required monthly payment to reach goal
-            if monthly_rate > 0:
-                required_with_returns = (goal.target_amount - fv_current) * monthly_rate / \
-                                      (math.pow(1 + monthly_rate, months_available) - 1)
+            if monthly_rate > 0 and months_available > 0:
+                denominator = math.pow(1 + monthly_rate, months_available) - 1
+                if abs(denominator) > 0.0001:  # Avoid division by near-zero
+                    required_with_returns = (goal.target_amount - fv_current) * monthly_rate / denominator
+                else:
+                    required_with_returns = (goal.target_amount - fv_current) / months_available
             else:
                 required_with_returns = (goal.target_amount - fv_current) / months_available
             

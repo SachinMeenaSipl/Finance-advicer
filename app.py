@@ -1,5 +1,15 @@
 """
 Flask REST API for Financial Planning Application
+
+⚠️ SECURITY NOTICE:
+This application uses in-memory storage for demonstration purposes only.
+For production use, implement:
+- Proper database storage (PostgreSQL, MySQL, etc.)
+- Data encryption for sensitive financial information
+- User authentication and authorization (OAuth2, JWT)
+- Input validation and sanitization
+- HTTPS/TLS encryption for API communication
+- Rate limiting and API security best practices
 """
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -12,7 +22,7 @@ import uuid
 app = Flask(__name__)
 CORS(app)
 
-# In-memory storage (in production, use a database)
+# In-memory storage (⚠️ DEMO ONLY - Use a database in production)
 clients_db: Dict[str, Client] = {}
 
 

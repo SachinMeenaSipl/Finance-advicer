@@ -2,7 +2,10 @@
 Test script for Financial Planning Application
 """
 import sys
-sys.path.insert(0, '/home/runner/work/Finance-advicer/Finance-advicer')
+import os
+
+# Add the parent directory to the path for imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from models import Client, Income, Expense, Asset, FinancialGoal, GoalType
 from financial_planner import FinancialPlanner
