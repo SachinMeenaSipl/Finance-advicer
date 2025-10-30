@@ -31,6 +31,7 @@ export default function IncomeExpensesStep({
     onIncomeChange({ ...income, totalMonthly: totalIncome })
     onExpensesChange({ ...expenses, totalMonthly: totalExpenses })
     setNetSurplus(calculateNetSurplus(totalIncome, totalExpenses))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [income.salary, income.bonus, income.other, expenses.rent, expenses.groceries, expenses.insurance, expenses.transport, expenses.utilities, expenses.entertainment, expenses.other])
 
   const handleIncomeChange = (field: keyof Income, value: number) => {

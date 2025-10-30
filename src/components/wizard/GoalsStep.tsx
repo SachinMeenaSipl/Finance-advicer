@@ -175,7 +175,7 @@ export default function GoalsStep({ goals, onChange }: GoalsStepProps) {
         <div className="text-center py-12 glass rounded-xl">
           <div className="text-6xl mb-4">🎯</div>
           <p className="text-gray-600 dark:text-gray-400">
-            No goals added yet. Click "Add Goal" to create your first financial goal.
+            No goals added yet. Click &quot;Add Goal&quot; to create your first financial goal.
           </p>
         </div>
       ) : (

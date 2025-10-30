@@ -36,6 +36,7 @@ export default function AssetsLiabilitiesStep({
     onAssetsChange({ ...assets, total: totalAssets })
     onLiabilitiesChange({ ...liabilities, total: totalLiabilities })
     setNetWorth(calculateNetWorth(totalAssets, totalLiabilities))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     assets.bankSavings, assets.retirementAnnuity, assets.vehicles, assets.property, assets.investments, assets.other,
     liabilities.creditCard, liabilities.personalLoan, liabilities.homeBond, liabilities.vehicleFinance, liabilities.other
